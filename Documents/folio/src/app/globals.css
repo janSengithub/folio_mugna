@@ -1,0 +1,43 @@
+/* Enable smooth scrolling */
+html, body {
+  scroll-behavior: smooth;
+}
+
+/* Import Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define light & dark mode variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #D0DDD0;
+    --foreground: #ededed;
+  }
+}
+
+/* Apply global styles to body */
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Adjust sections for smooth scrolling with fixed headers */
+section {
+  scroll-margin-top: 60px; /* Adjust this value to match your header height */
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
